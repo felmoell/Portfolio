@@ -1,0 +1,270 @@
+<div style="background-color: #0A192F;">
+    <header class="navbar">
+        <img src="../../../assets/logo.png" alt="Logo" style="width: 40px; height: 40px;margin-left: 25px;">
+        <ul>
+            <li>
+                <div class="NavBarItem" (click)="JumpToSection(1)">
+                    <h3>01.<span>Lebenslauf</span></h3>
+                </div>
+            </li>
+
+            <li>
+                <div class="NavBarItem" (click)="JumpToSection(2)">
+                    <h3>02. <span>Ausgewählte Projekte</span> </h3>
+                </div>
+            </li>
+            <li>
+                <div class="NavBarItem" (click)="JumpToSection(3)">
+                    <h3>03.<span>Portfolio</span> </h3>
+                </div>
+            </li>
+            <li>
+                <div class="NavBarItem" (click)="JumpToSection(4)">
+                    <h3>04. <span>Kontakt</span></h3>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <div class="landingSectionWrapper">
+        <section class="landingSection">
+            <h6 class="first">Hi, ich bin</h6>
+            <h1 class="second">Felix Möllerherm</h1>
+            <h1 class="third">Und das ist mein Portfolio.</h1>
+            <p>Ich bin Frontend-Entwickler und setzte Webanwendungen mit Angular und Ionic um. Die Planung der Sofware
+                realisiere ich mit Software wie Adobe XD oder Sketch.</p>
+            <p>Neben meinen Frontendkenntisen verfüge ich auch
+                über Kenntnisse in der Entwicklung von Backends mit PHP/Laravel und in der Entwicklung von
+                Javaentanwendungen.</p>
+            <button class="button" (click)="JumpToSection(1)">
+                Mehr Anzeigen
+            </button>
+        </section>
+    </div>
+
+    <div id="section_1" data-aos="fade-up-right" class="section1">
+        <div style="display: flex;">
+            <ul class="vita">
+                <li (click)="showVitaEntry(0)" id="vitaEntry0" class="vitaEntry">
+                    <h5>2003 - 2007</h5><span>Emanuel-von-Ketteler Grundschule Emsdetten</span>
+                </li>
+                <li (click)="showVitaEntry(1)" id="vitaEntry1" class="vitaEntry">
+                    <h5>2007 - 2011</h5><span> Gymnasium Martinum </span>
+                </li>
+                <li (click)="showVitaEntry(2)" id="vitaEntry2" class="vitaEntry">
+                    <h5>2011 - 2013</h5><span> Geschwister-Scholl-Schule Emsdetten </span>
+                </li>
+                <li (click)="showVitaEntry(3)" id="vitaEntry3" class="vitaEntry">
+                    <h5>2013 - 2016</h5><span>Wirtschaftsschule Steinfurt</span>
+                </li>
+                <li (click)="showVitaEntry(4)" id="vitaEntry4" class="vitaEntry">
+                    <h5>2016-2020</h5><span>Hochschule Osnabrück</span>
+                </li>
+            </ul>
+            <div class="vita-text">
+                <div>
+                    <h4>{{currentVitaEntry.name}} </h4>
+                    <h6>{{currentVitaEntry.text}} </h6>
+                    <ul>
+                        <li *ngIf="currentVitaEntry.tags[0]!='' ">{{currentVitaEntry.tags[0]}}</li>
+                        <li *ngIf="currentVitaEntry.tags[1]!='' ">{{currentVitaEntry.tags[1]}}</li>
+                        <li *ngIf="currentVitaEntry.tags[2]!='' ">{{currentVitaEntry.tags[2]}}</li>
+                        <li *ngIf="currentVitaEntry.tags[3]!='' ">{{currentVitaEntry.tags[3]}}</li>
+                        <li *ngIf="currentVitaEntry.tags[4]!='' ">{{currentVitaEntry.tags[4]}}</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="Portfolio_images">
+        <div class="wrapper-right" data-aos="fade-left" data-aos-easing="ease-in-sine" id="section_2">
+            <div class="left">
+                <img class="img1">
+            </div>
+            <div class="right">
+                <h6>Ausgewähltes Project</h6>
+                <h3>Juicery</h3>
+                <div class="text-container">
+                    <p>Webseite einer Saftbar in LosAngeles zum Testen von der Animate On Scroll Javascript Library.</p>
+                </div>
+                <div class="tags">
+                    <h5>AOS</h5>
+                    <h5>HTML</h5>
+                    <h5>CSS</h5>
+                    <h5>JS</h5>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <span tooltip="Code auf GitHub" style="padding-bottom: 50px;">
+                        <a href="https://github.com/felmoell/juicery" target="_blank">
+                            <ion-icon name="logo-github" style="width: 30px; height: 30px;"></ion-icon>
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="wrapper-left" data-aos="fade-right" data-aos-easing="ease-in-sine">
+            <div class="left">
+                <h6>Ausgewähltes Projekt</h6>
+                <h3>Corona Tracker</h3>
+                <div class="text-container">
+                    <p>Weltweiter Überblick über die Coronafallzahlen mit interaktiver Karte und verschieden Diagrammen.
+                    </p>
+                </div>
+                <div class="tags">
+                    <h5>Angular</h5>
+                    <h5>Ionic</h5>
+                    <h5>Google Charts</h5>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <span tooltip="Code auf GitHub">
+                        <a href="https://github.com/felmoell/Corona-Tracker" target="_blank">
+                            <ion-icon name="logo-github" style="width: 30px; height: 30px;"></ion-icon>
+                        </a>
+                    </span>
+                    <span tooltip="Hosted Version">
+                        <a href="https://schmolles-corona-tracker.web.app" target="_blank">
+                            <ion-icon name="server-outline" style="width: 30px; height: 30px;"></ion-icon>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <div class="right">
+                <img class="img2">
+            </div>
+        </div>
+
+
+        <div class="wrapper-right" data-aos="fade-left" data-aos-easing="ease-in-sine">
+            <div class="left">
+                <img class="img3">
+            </div>
+            <div class="right">
+                <h6>Ausgewähltes Projekt</h6>
+                <h3>Emotions</h3>
+                <div class="text-container">
+                    <p>Softwaresystem zur Erfassung von Emotionen im Zusammenhang mit der akutellen Position des
+                        Nutzers.</p>
+                </div>
+                <div class="tags">
+                    <h5>Android</h5>
+                    <h5>Java</h5>
+                    <h5>Laravel</h5>
+                    <h5>PHP</h5>
+                </div>
+                <div style="margin-top: 15px;">
+                    <span tooltip="Code auf GitHub">
+                        <a href="https://github.com/felmoell/Emotions" target="_blank">
+                            <ion-icon name="logo-github" style="width: 30px; height: 30px;"></ion-icon>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div>
+        <div id="section_3" style="margin: 0 auto;max-width: 1000px; margin-top: 50px;margin-bottom: 50px; ">
+            <h6 class="heading-portfolio">03. Portfolio</h6>
+            <div class="grid" data-aos="fade-up">
+                <div class="portfolio-card" *ngFor="let item of objArray">
+                    <div class="actions">
+                        <div class="folder">
+                            <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-folder">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="share">
+                            <span tooltip="Code auf GitHub">
+                                <a href="{{item.link}}" target="_blank">
+                                    <ion-icon name="logo-github" style="width: 30px; height: 30px;"></ion-icon>
+                                </a>
+                            </span>
+                            <span tooltip="Hosted Version">
+                                <div *ngIf="item.hostlink!= ''">
+                                    <a href="{{item.hostlink}}" target="_blank">
+                                        <ion-icon name="server-outline" style="width: 30px; height: 30px;"></ion-icon>
+                                    </a>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <h3>{{item.name}}</h3>
+                    <h5>{{item.text}}</h5>
+                    <div class="tags">
+                        <h6 *ngFor="let tag of item.tags">{{tag}}</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="showmoreBtn">
+                <button class="button" id="showMoreBtn" (click)="showMore()">
+                    Mehr Anzeigen
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="getInTouch" id="section_4" data-aos="fade-up-right">
+        <div>
+            <h6 class="heading-portfolio">04. Kontakt</h6>
+            <h3>Kontakt</h3>
+            <p>Vielen Dank für den Besuch meiner Website. Wenn Sie noch Fragen zu meinen Projekten haben,
+                schreiben Sie mir bitten eine E-Mail.<br> Sie erhalten in jedem Fall kurzfristig eine Antwort von mir.</p>
+            <div class="showmoreBtn">
+                <button class="button">
+                  <a href="mailto:felix.moellerherm@googlemail.com">E-Mail Schreiben</a> 
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="left-bottom-socials">
+        <ul>
+            <li>
+                <a href="https://github.com/felmoell" target="_blank">
+                    <ion-icon name="logo-github" style="width: 30px; height: 30px;"></ion-icon>
+                </a>
+            </li>
+            <!--li>
+                <ion-icon name="logo-instagram" style="width: 30px; height: 30px;"></ion-icon>
+            </li>
+            <li>
+                <ion-icon name="logo-twitter" style="width: 30px; height: 30px;"></ion-icon>
+            </li>
+            <li>
+                <ion-icon name="logo-linkedin" style="width: 30px; height: 30px;"></ion-icon>
+            </li-->
+            <li>
+                <div class="line"></div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="rigth-bottom-mail">
+        <ul>
+            <li>
+                <a href="mailto:felix.moellerherm@googlemail.com">
+                    <h5>felix.moellerherm@googlemail.com</h5>
+                </a>
+            </li>
+            <li>
+                <div class="line"></div>
+            </li>
+        </ul>
+    </div>
+</div>
