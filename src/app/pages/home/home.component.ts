@@ -16,13 +16,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     AOS.init();
-    document.getElementById("body").style.overflowX = "hidden";
+    document.getElementById("body")!.style.overflowX = "hidden";
     this.objArray.push(new work("Emotions", "Softwaresystem zur Erfassung von Emotionen im Zusammenhang mit der akutellen Position des Nutzers.", ["PHP", "Laravel", "Java", "Android"], "https://github.com/felmoell/Emotions", ""));
     this.objArray.push(new work("PEPEMA", "Softwaresystem zur Verwaltung von Feuerwehr Equipment (PPE).", ["PHP", "Laravel", "Ionic", "Angular"], "https://github.com/felmoell/PEPEMA", ""));
     this.objArray.push(new work("Agency", "Tempalate for a Webagency build with Ionic/Angular.", ["Ionic", "Angular"], "https://github.com/felmoell/Agency", ""));
     this.objArray.push(new work("Corona-Tracker", "Weltweiter Überblick über die Coronafallzahlen mit interaktiver Karte und verschieden Diagrammen.", ["Google Charts", "Ionic", "Angular"], "https://github.com/felmoell/Corona-Tracker", "https://schmolles-corona-tracker.web.app/"));
     this.objArray.push(new work("Juicery", "Webseite zum Testen von Animate On Scroll Library", ["AOS", "HTML", "CSS", "JS"], "https://github.com/felmoell/juicery", ""));
-    this.objArray.push(new work("Portfolio", "Diese Webseite als Lebenslauf und Portfolio", ["Angular","AOS"], "", ""));
+    this.objArray.push(new work("Portfolio", "Diese Webseite als Lebenslauf und Portfolio", ["Angular","AOS"], "https://github.com/felmoell/Portfolio", "https://felmoell-portfolio.web.app/home"));
 
     this.vitaArray.push(new vita("Schüler", "2003-2007", ["Grundschule","","","",""]))
     this.vitaArray.push(new vita("Schüler", "2007-2011", ["Gymnasium","","","",""]))
@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
     this.vitaArray.push(new vita("Student", "2016-2020", ["Universität","Java und C/C++ in Verteilten Systemen und (Android) Anwendungen","Webanwendungen/Hybride Apps mit Angular und Ionic","Backends mit PHP/Laravel und Datenbanken mit mySQL und PostreSQL", "User Interface Entwicklung, Audio- und Videotechnik, Computergrafik, Spieleprogrammierung und 3D-Animation"]))
     
     this.currentVitaEntry = this.vitaArray[0];
+    this.showVitaEntry(4);
   }
   showMore() {
     if (this.showMoreBtnActive === false) {

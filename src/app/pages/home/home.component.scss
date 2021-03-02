@@ -431,7 +431,7 @@
     position: fixed;
     right: 40px;
     bottom: 0px;
-
+    width: 30px !important;
     ul {
         list-style: none;
         display: flex;
@@ -710,4 +710,113 @@
     padding: 50px;
     padding-top: 0px !important;
     color: #ccd6f6;
+}
+
+@media (max-width: 800px) {
+    .landingSection {
+        max-width: 70vw !important;
+
+        p {
+            max-width: 70vw !important;
+        }
+
+        .second,
+        .third {
+            font-size: clamp(30px, 8vw, 50px) !important;
+        }
+    }
+
+    .section1 {
+        height: auto;
+
+    }
+
+    #vita-wrapper {
+        display: block !important;
+        width: 70vw !important;
+    }
+
+    .vita {
+        padding: 0 !important;
+    }
+
+    .vita-text {
+        width: 60vw !important;
+        max-width: 60vw !important;
+        margin-top: 25px;
+        padding: 0 !important;
+    }
+
+    .Portfolio_images {
+
+        .wrapper-right,
+        .wrapper-left {
+            margin-top: 100px !important;
+            margin-bottom: 100px !important;
+            width: 70vw !important;
+            display: block !important;
+
+            img {
+                width: 70vw !important;
+                height: 20vh !important;
+            }
+
+            .right {
+                margin-top: 25px !important;
+                align-items: flex-start !important;
+
+                img {
+                    margin-left: 0 !important;
+                }
+
+                .text-container {
+                    min-width: 70vw !important;
+                }
+            }
+
+
+            .left {
+                margin-top: 25px !important;
+                align-items: flex-start !important;
+
+                .text-container {
+                    min-width: 70vw !important;
+                }
+            }
+        }
+    }
+
+    .rigth-bottom-mail {
+        display: none !important;
+    }
+
+    .navbar {
+        width: 100vw !important;
+
+        ul {
+            display: none !important;
+        }
+    }
+
+    .grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+        grid-template-rows: repeat(1, 1fr) !important;
+
+        .portfolio-card {
+            margin: 0 auto;
+            max-width: 70vw !important;
+            width: 70vw !important;
+        }
+    }
+
+
+    .getInTouch {
+        p {
+            padding: 10px 100px;
+        }
+    }
+
+    .landingSectionWrapper {
+        height: 100vh;
+    }
 }
