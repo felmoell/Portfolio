@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.vitaArray.push(new vita("Schüler", "2007-2011", ["Gymnasium","","","",""]))
     this.vitaArray.push(new vita("Schüler", "2011-2013", ["Realschule","","","",""]))
     this.vitaArray.push(new vita("Schüler", "2013-2016", ["Berufliches Gymnasium","Grundlagen Java und Software Engineering (UML)","Grundlagen SQL und ER/EER","",""]))
-    this.vitaArray.push(new vita("Student", "2016-2020", ["Universität","Java und C/C++ in Verteilten Systemen und (Android) Anwendungen","Webanwendungen/Hybride Apps mit Angular und Ionic","Backends mit PHP/Laravel und Datenbanken mit mySQL und PostreSQL", "User Interface Entwicklung, Audio- und Videotechnik, Computergrafik, Spieleprogrammierung und 3D-Animation"]))
+    this.vitaArray.push(new vita("Student", "2016-2020", ["Universität","Java und C/C++ in Verteilten Systemen und (Android) Anwendungen","Webanwendungen/Hybride Apps mit Angular und Ionic","Backends mit PHP/Laravel und Datenbanken mit mySQL und PostgreSQL", "User Interface Entwicklung, Audio- und Videotechnik, Computergrafik, Spieleprogrammierung und 3D-Animation"]))
     
     this.currentVitaEntry = this.vitaArray[0];
     this.showVitaEntry(4);
