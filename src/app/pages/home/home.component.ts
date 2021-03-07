@@ -66,8 +66,10 @@ export class HomeComponent implements OnInit {
       });
 
     } else {
-      document.getElementById("showMoreBtn").innerText = "Mehr Anzeigen"
-      for (let index = 0; index < 2; index++) {
+      document.getElementById("showMoreBtn").innerText = "Mehr Anzeigen"  
+      
+      for (let index = this.objArray.length; index > 6; index--) {
+        console.log(index);  
         this.objArray.pop();  
       }
       this.showMoreBtnActive = false;
