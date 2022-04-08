@@ -1,5 +1,5 @@
 * {
- font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 .landingSectionWrapper {
@@ -8,6 +8,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+   
+}
+
+.paintingCursor{
+    cursor: url('../../../assets/cursor.png'), auto;
 }
 
 .navbar {
@@ -111,7 +117,7 @@
         text-decoration: none;
         cursor: pointer;
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-        padding: 1.25rem 1.75rem;
+        padding: 1rem 1.5rem;
         margin-top: 25px;
 
         &:hover {
@@ -432,6 +438,7 @@
     right: 40px;
     bottom: 0px;
     width: 30px !important;
+
     ul {
         list-style: none;
         display: flex;
@@ -820,3 +827,100 @@
         height: 100vh;
     }
 }
+
+.whiteboard_wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: 8888;
+}
+
+.whiteboard {
+
+    z-index: 8888;
+}
+
+.landingSection {
+    position: absolute;
+    z-index: 99999;
+}
+
+#whiteboard {
+    width: 100%;
+    height: 100%;
+}
+
+.colorContainer {
+    background-color: lighten($color: #0A192F, $amount: 15);
+    position: absolute;
+    right: 25px;
+    top: 150px;
+    border-radius: 10px;
+    z-index: 99999999;
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+
+        li {
+            width: 100%;
+        }
+
+        margin: 0;
+
+        .color {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        ion-icon {
+            color: white;
+            font-size: 30px;
+        }
+        .icon{
+            margin-top: 20px;
+            margin-bottom: 0 !important;
+        }
+
+
+        .divider {
+            height: 2px;
+            background-color: black;
+            width: 100%;
+            margin-bottom: 15px 0;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+
+        }
+    }
+
+
+}
+
+.unselectable {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #cc0000;
+  }

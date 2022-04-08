@@ -25,21 +25,27 @@
             </li>
         </ul>
     </header>
-    <div class="landingSectionWrapper">
-        <section class="landingSection">
-            <h6 class="first">Hi, ich bin</h6>
-            <h1 class="second">Felix Möllerherm</h1>
-            <h1 class="third">Und das ist mein Portfolio.</h1>
-            <p>Ich bin Frontend-Entwickler und setzte Webanwendungen mit Angular und Ionic um. Die Planung der Sofware
+ 
+    <div class="landingSectionWrapper paintingCursor" id="landingSectionWrapper">
+        <canvas class="whiteboard" id="whiteboard" width="{{this.width}}" height="{{this.height}}"></canvas>
+
+        <section class="landingSection"  >
+            <h6 class="first unselectable" >Hi, ich bin</h6>
+            <h1 class="second unselectable">Felix Möllerherm</h1>
+            <h1 class="third unselectable">Und das ist mein Portfolio.</h1>
+            <p class="unselectable">Ich bin Frontend-Entwickler und setzte Webanwendungen mit Angular und Ionic um. Die Planung der Sofware
                 realisiere ich mit Software wie Adobe XD oder Sketch.</p>
-            <p>Neben meinen Frontendkenntisen verfüge ich auch
+            <p class="unselectable">Neben meinen Frontendkenntisen verfüge ich auch
                 über Kenntnisse in der Entwicklung von Backends mit PHP/Laravel und in der Entwicklung von
                 Javaanwendungen.</p>
-            <button class="button" (click)="JumpToSection(1)">
+            <button class="button unselectable" (click)="JumpToSection(1)">
                 Mehr Anzeigen
             </button>
+
+
         </section>
     </div>
+
 
     <div id="section_1" data-aos="fade-up-right" class="section1">
         <div id="vita-wrapper" style="display: flex;">
@@ -59,18 +65,16 @@
                 <li (click)="showVitaEntry(4)" id="vitaEntry4" class="vitaEntry">
                     <h5>2016-2020</h5><span>Hochschule Osnabrück</span>
                 </li>
+                <li (click)="showVitaEntry(5)" id="vitaEntry5" class="vitaEntry">
+                    <h5>2021-Heute</h5><span>Gates IT GmbH</span>
+                </li>
             </ul>
-            <div class="vita-text">
+            <div class="vita-text" *ngIf="currentVitaEntry != null ">
                 <div>
                     <h4>{{currentVitaEntry.name}} </h4>
                     <h6>{{currentVitaEntry.text}} </h6>
-                    <ul>
-                        <li *ngIf="currentVitaEntry.tags[0]!='' ">{{currentVitaEntry.tags[0]}}</li>
-                        <li *ngIf="currentVitaEntry.tags[1]!='' ">{{currentVitaEntry.tags[1]}}</li>
-                        <li *ngIf="currentVitaEntry.tags[2]!='' ">{{currentVitaEntry.tags[2]}}</li>
-                        <li *ngIf="currentVitaEntry.tags[3]!='' ">{{currentVitaEntry.tags[3]}}</li>
-                        <li *ngIf="currentVitaEntry.tags[4]!='' ">{{currentVitaEntry.tags[4]}}</li>
-
+                    <ul *ngFor="let item of currentVitaEntry.tags">
+                        <li>{{item}}</li>
                     </ul>
                 </div>
             </div>
@@ -221,10 +225,11 @@
             <h6 class="heading-portfolio">04. Kontakt</h6>
             <h3>Kontakt</h3>
             <p>Vielen Dank für den Besuch meiner Website. Wenn Sie noch Fragen zu meinen Projekten haben,
-                schreiben Sie mir bitten eine E-Mail.<br> Sie erhalten in jedem Fall kurzfristig eine Antwort von mir.</p>
+                schreiben Sie mir bitten eine E-Mail.<br> Sie erhalten in jedem Fall kurzfristig eine Antwort von mir.
+            </p>
             <div class="showmoreBtn">
                 <button class="button">
-                  <a href="mailto:felix.moellerherm@googlemail.com">E-Mail Schreiben</a> 
+                    <a href="mailto:felix.moellerherm@googlemail.com">E-Mail Schreiben</a>
                 </button>
 
             </div>
@@ -267,4 +272,48 @@
         </ul>
     </div>
 
+</div>
+
+<div class="colorContainer">
+    <ul>
+        <li>
+            <div class="color red" (click)="colorChange('red')">
+
+            </div>
+        </li>
+        <li>
+            <div class="color yellow" (click)="colorChange('yellow')">
+
+            </div>
+        </li>
+        <li>
+            <div class="color green" (click)="colorChange('green')">
+
+            </div>
+        </li>
+
+        <li>
+            <div class="divider" >
+
+            </div>
+        </li>
+        
+        <li *ngIf="isCurrentlyPainting">
+            <div class="color icon"  (click)="togglePainting()">
+                <ion-icon name="pause-outline"></ion-icon>
+            </div>
+        </li>
+
+        <li *ngIf="!isCurrentlyPainting">
+            <div class="color icon"  (click)="togglePainting()">
+                <ion-icon name="play-outline"></ion-icon>
+            </div>
+        </li>
+
+        <li >
+            <div class="color icon"  (click)="clearCanvas()">
+                <ion-icon name="trash-outline"></ion-icon>
+            </div>
+        </li>
+    </ul>
 </div>
