@@ -40,6 +40,10 @@ export class HomeComponent implements OnInit {
       x: 0,
       y: 0
     };
+
+
+
+
   }
 
   private unlistener: () => void;
@@ -81,6 +85,8 @@ export class HomeComponent implements OnInit {
       this.current.y = e.clientY || e.touches[0].clientY;
 
     });
+
+
   }
   ngOnInit(): void {
     AOS.init();
@@ -162,7 +168,7 @@ export class HomeComponent implements OnInit {
     context.moveTo(data.x0 * w, data.y0 * h);
     context.lineTo(data.x1 * w, data.y1 * h);
     context.strokeStyle = data.color;
-    context.lineWidth = 5;
+    context.lineWidth = 2;
     context.stroke();
     context.closePath();
 
