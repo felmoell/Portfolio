@@ -55,7 +55,6 @@ export class HomeComponent implements OnInit {
     this.width = document.getElementsByClassName('whiteboard')[0].clientWidth.toString();
     this.height = document.getElementsByClassName('whiteboard')[0].clientHeight.toString();
 
-    console.log(this.width, this.height)
     this.unlistener = this.renderer2.listen(document.getElementsByClassName('whiteboard')[0], "mousedown", e => {
       if (this.isCurrentlyPainting) {
         this.drawing = true;
@@ -101,7 +100,6 @@ export class HomeComponent implements OnInit {
              });
              this.objArray.push(t);
            })
-           console.log(this.objArray);
          } else {
            let t = new work(element.full_name, element.description, [], element.html_url, element.homepage);
            this.gitHubService.getTopicsData("https://api.github.com/repos/" + element.full_name + "/topics").then(resLang => {

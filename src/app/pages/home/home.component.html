@@ -1,30 +1,7 @@
 <div style="background-color: #0A192F;">
-    <header class="navbar">
-        <img src="../../../assets/logo.png" alt="Logo" style="width: 40px; height: 40px;margin-left: 25px;">
-        <ul>
-            <li>
-                <div class="NavBarItem" (click)="JumpToSection(1)">
-                    <h3>01.<span>Lebenslauf</span></h3>
-                </div>
-            </li>
-
-            <li>
-                <div class="NavBarItem" (click)="JumpToSection(2)">
-                    <h3>02. <span>Ausgewählte Projekte</span> </h3>
-                </div>
-            </li>
-            <li>
-                <div class="NavBarItem" (click)="JumpToSection(3)">
-                    <h3>03.<span>Portfolio</span> </h3>
-                </div>
-            </li>
-            <li>
-                <div class="NavBarItem" (click)="JumpToSection(4)">
-                    <h3>04. <span>Kontakt</span></h3>
-                </div>
-            </li>
-        </ul>
-    </header>
+    <app-header>
+        
+    </app-header>
  
     <div class="landingSectionWrapper paintingCursor" id="landingSectionWrapper">
         <canvas class="whiteboard" id="whiteboard" width="{{this.width}}" height="{{this.height}}"></canvas>
@@ -63,7 +40,7 @@
                     <h5>2013 - 2016</h5><span>Wirtschaftsschule Steinfurt</span>
                 </li>
                 <li (click)="showVitaEntry(4)" id="vitaEntry4" class="vitaEntry">
-                    <h5>2016-2020</h5><span>Hochschule Osnabrück</span>
+                    <h5>2016-2021</h5><span>Hochschule Osnabrück</span>
                 </li>
                 <li (click)="showVitaEntry(5)" id="vitaEntry5" class="vitaEntry">
                     <h5>2021-Heute</h5><span>Gates IT GmbH</span>

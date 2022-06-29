@@ -16,62 +16,6 @@
     cursor: url('../../../assets/cursor.png'), auto;
 }
 
-.navbar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    display: flex;
-    align-items: center;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transform: translateY(0px);
-    background-color: rgba(10, 25, 47, 1);
-    box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
-    padding: 25px 0px;
-    z-index: 999;
-
-    ul {
-        list-style: none;
-        display: flex;
-        position: absolute;
-        right: 75px;
-        margin: 0;
-        padding: 20px;
-
-        li {
-            padding: 10px;
-
-            .NavBarItem {
-                display: flex;
-                align-content: center;
-                font-size: 16px;
-
-                span {
-                    color: #ccd6f6;
-                    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-                }
-
-                h3 {
-                    color: #64ffda;
-                    font-size: 16px;
-                    margin: 0;
-                    margin-right: 10px;
-                }
-            }
-
-            &:first-of-type {
-                margin-left: 0px !important;
-            }
-
-            &:hover {
-                cursor: pointer;
-
-                span {
-                    color: #64ffda !important;
-                }
-            }
-        }
-    }
-}
 
 .section1 {
     margin: 0 auto;
@@ -765,7 +709,7 @@
 
             img {
                 width: 70vw !important;
-                height: 20vh !important;
+                height: 30vh !important;
             }
 
             .right {
@@ -774,6 +718,7 @@
 
                 img {
                     margin-left: 0 !important;
+                    width: 100%;
                 }
 
                 .text-container {
@@ -797,13 +742,7 @@
         display: none !important;
     }
 
-    .navbar {
-        width: 100vw !important;
 
-        ul {
-            display: none !important;
-        }
-    }
 
     .grid {
         grid-template-columns: repeat(1, 1fr) !important;
@@ -917,8 +856,9 @@
             background-color: black;
 
         }
-        .blue{
-            background-color: blue; 
+
+        .blue {
+            background-color: blue;
         }
     }
 
@@ -934,12 +874,54 @@
     color: #cc0000;
 }
 
+@media (max-width: 1400px) {
+    .landingSection{
+        max-width: 90vw;
+        margin: 0  auto;
+  
+        p{
+            max-width: 70vw !important;
+        }
+    }
+    .Portfolio_images {
+        .wrapper-right {
+            justify-content: center;
+            margin: 0 auto !important;
 
+            .left {
+                img {
+                    width: 50vw;
+                    height: 30vw;
+                }
+            }
+        }
+
+        .wrapper-left {
+            margin: 100px auto !important;
+            justify-content: center;
+
+            .right {
+                img {
+                    width: 50vw ;
+                    height: 30vw;
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-height: 900px) {
+    .colorContainer {
+        display: none;
+    }
+}
 @media (max-width: 1200px) {
     .colorContainer {
         display: none;
     }
-    .paintingCursor{
+
+    .paintingCursor {
         cursor: unset !important;
     }
 }
