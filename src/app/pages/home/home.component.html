@@ -154,7 +154,8 @@
     <div>
         <div id="section_3" style="margin: 0 auto;max-width: 1000px; margin-top: 50px;margin-bottom: 50px; ">
             <h6 class="heading-portfolio">03. Portfolio</h6>
-            <div class="grid" data-aos="fade-up">
+            <div class="lds-ring" *ngIf="loading"><div></div><div></div><div></div><div></div></div>
+            <div class="grid" data-aos="fade-up"  *ngIf="!loading">
                 <div class="portfolio-card" *ngFor="let item of objArray">
                     <div class="actions">
                         <div class="folder">
@@ -187,12 +188,14 @@
                     </div>
                 </div>
             </div>
-            <div class="showmoreBtn">
+            <div class="showmoreBtn"  *ngIf="!loading">
                 <button class="button" id="showMoreBtn" (click)="showMore()">
                     Mehr Anzeigen
                 </button>
             </div>
         </div>
+
+     
     </div>
 
 

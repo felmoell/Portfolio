@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   showMoreBtnActive: boolean = false;
   private socket: Socket;
   public current = null;
-
+  loading:boolean = false;
   context = null;
   width = "1920"
   height = "1080"
@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
       y: 0
     };
 
+ 
 
 
 
@@ -84,32 +85,30 @@ export class HomeComponent implements OnInit {
       this.current.y = e.clientY || e.touches[0].clientY;
 
     });
-
+    this.togglePainting();
 
   }
   ngOnInit(): void {
     AOS.init();
+    this.loading = true;
     document.getElementById("body")!.style.overflowX = "hidden";
      this.gitHubService.getData().then(res => {     
-       res.forEach((element, index) => {
+       res.projects.forEach((element, index) => {
          if (index <= 5) {
            let t = new work(element.full_name, element.description, [], element.html_url, element.homepage);
-           this.gitHubService.getTopicsData("https://api.github.com/repos/" + element.full_name + "/topics").then(resLang => {
-             resLang.names.forEach(element => {
-               t.tags.push(element);
-             });
-             this.objArray.push(t);
-           })
+           element.topics.forEach(element => {
+            t.tags.push(element);
+          });
+           this.objArray.push(t);
          } else {
            let t = new work(element.full_name, element.description, [], element.html_url, element.homepage);
-           this.gitHubService.getTopicsData("https://api.github.com/repos/" + element.full_name + "/topics").then(resLang => {
-             resLang.names.forEach(element => {
-               t.tags.push(element);
-             });
-             this.objArrayShowMore.push(t);
-           })
+           element.topics.forEach(element => {
+            t.tags.push(element);
+          });
+           this.objArrayShowMore.push(t);
          }
        });
+     this.loading = false;
      })
      this.vitaArray.push(new vita("Schüler", "2003-2007", ["Grundschule"]))
      this.vitaArray.push(new vita("Schüler", "2007-2011", ["Gymnasium"]))

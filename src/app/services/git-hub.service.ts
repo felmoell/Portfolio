@@ -8,7 +8,7 @@ export class GitHubService {
 
   constructor(private http: HttpClient) { }
   getData(): Promise<any> {
-    const url = "https://api.github.com/users/felmoell/repos";    
+    const url = "https://portfilio-middleware.herokuapp.com/repos";    
     const httpOption = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
