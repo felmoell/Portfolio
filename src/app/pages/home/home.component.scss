@@ -345,7 +345,7 @@
     position: fixed;
     left: 20px;
     bottom: 0px;
-
+    z-index: 9999;
     ul {
         list-style: none;
         display: flex;
@@ -771,17 +771,17 @@
     position: relative;
     height: 100vh;
     width: 100vw;
-    z-index: 8888;
+    z-index: 7000;
 }
 
 .whiteboard {
 
-    z-index: 8888;
+    z-index: 7000;
 }
 
 .landingSection {
     position: absolute;
-    z-index: 99999;
+    z-index: 7500;
 }
 
 #whiteboard {

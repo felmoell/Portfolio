@@ -6,6 +6,8 @@ import { vita } from './vita';
 import { GitHubService } from '../../services/git-hub.service'
 import { WhiteboardService } from 'src/app/services/whiteboard.service';
 import { io, Socket } from 'socket.io-client';
+import { ModalButtonType, ModalService } from 'carbon-components-angular';
+import { LoginComponent } from 'src/app/modals/login/login.component';
 
 @Component({
   selector: 'app-home',
@@ -32,7 +34,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private gitHubService: GitHubService,
     private whiteboardService: WhiteboardService,
-    private renderer2: Renderer2) {
+    private renderer2: Renderer2,
+    protected modalService: ModalService) {
     this.socket = io('https://schmolles-whiteboardbackend.herokuapp.com');
     this.socket.on('drawing', this.onDrawingEvent);
     this.current = {
@@ -215,5 +218,16 @@ export class HomeComponent implements OnInit {
 
   clearCanvas(){
     this.context.clearRect(0, 0, document.getElementsByClassName('whiteboard')[0]["width"], document.getElementsByClassName('whiteboard')[0]["height"]);
+  }
+
+  login(){
+		this.modalService.create({
+			component: LoginComponent,
+      inputs: {
+				modalText: "modalText",
+				size: "sm",
+				showCloseButton: true
+			}
+		});
   }
 }

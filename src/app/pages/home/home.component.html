@@ -1,16 +1,17 @@
 <div style="background-color: #0A192F;">
     <app-header>
-        
+
     </app-header>
- 
+
     <div class="landingSectionWrapper paintingCursor" id="landingSectionWrapper">
         <canvas class="whiteboard" id="whiteboard" width="{{this.width}}" height="{{this.height}}"></canvas>
 
-        <section class="landingSection"  >
-            <h6 class="first unselectable" >Hi, ich bin</h6>
+        <section class="landingSection">
+            <h6 class="first unselectable">Hi, ich bin</h6>
             <h1 class="second unselectable">Felix Möllerherm</h1>
             <h1 class="third unselectable">Und das ist mein Portfolio.</h1>
-            <p class="unselectable">Ich bin Frontend-Entwickler und setzte Webanwendungen mit Angular und Ionic um. Die Planung der Sofware
+            <p class="unselectable">Ich bin Frontend-Entwickler und setzte Webanwendungen mit Angular und Ionic um. Die
+                Planung der Sofware
                 realisiere ich mit Software wie Adobe XD oder Sketch.</p>
             <p class="unselectable">Neben meinen Frontendkenntisen verfüge ich auch
                 über Kenntnisse in der Entwicklung von Backends mit PHP/Laravel und in der Entwicklung von
@@ -154,8 +155,13 @@
     <div>
         <div id="section_3" style="margin: 0 auto;max-width: 1000px; margin-top: 50px;margin-bottom: 50px; ">
             <h6 class="heading-portfolio">03. Portfolio</h6>
-            <div class="lds-ring" *ngIf="loading"><div></div><div></div><div></div><div></div></div>
-            <div class="grid" data-aos="fade-up"  *ngIf="!loading">
+            <div class="lds-ring" *ngIf="loading">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="grid" data-aos="fade-up" *ngIf="!loading">
                 <div class="portfolio-card" *ngFor="let item of objArray">
                     <div class="actions">
                         <div class="folder">
@@ -188,14 +194,14 @@
                     </div>
                 </div>
             </div>
-            <div class="showmoreBtn"  *ngIf="!loading">
+            <div class="showmoreBtn" *ngIf="!loading">
                 <button class="button" id="showMoreBtn" (click)="showMore()">
                     Mehr Anzeigen
                 </button>
             </div>
         </div>
 
-     
+
     </div>
 
 
@@ -225,6 +231,11 @@
                     <ion-icon name="logo-github" style="width: 30px; height: 30px;"></ion-icon>
                 </a>
             </li>
+            <li>
+                <ion-icon name="log-in-outline" style="width: 30px; height: 30px;" (click)="login()"></ion-icon>
+            </li>
+
+
             <!--li>
                 <ion-icon name="logo-instagram" style="width: 30px; height: 30px;"></ion-icon>
             </li>
@@ -251,7 +262,7 @@
             </li>
         </ul>
     </div>
-
+<ibm-placeholder></ibm-placeholder>
 </div>
 
 <div class="colorContainer">
@@ -263,7 +274,7 @@
         </li>
         <li>
             <div class="color blue" (click)="colorChange('blue')">
-                
+
             </div>
         </li>
 
@@ -286,27 +297,27 @@
 
 
 
-        
+
         <li>
-            <div class="divider" >
+            <div class="divider">
 
             </div>
         </li>
-        
+
         <li *ngIf="isCurrentlyPainting">
-            <div class="color icon"  (click)="togglePainting()">
+            <div class="color icon" (click)="togglePainting()">
                 <ion-icon name="pause-outline"></ion-icon>
             </div>
         </li>
 
         <li *ngIf="!isCurrentlyPainting">
-            <div class="color icon"  (click)="togglePainting()">
+            <div class="color icon" (click)="togglePainting()">
                 <ion-icon name="play-outline"></ion-icon>
             </div>
         </li>
 
-        <li >
-            <div class="color icon"  (click)="clearCanvas()">
+        <li>
+            <div class="color icon" (click)="clearCanvas()">
                 <ion-icon name="trash-outline"></ion-icon>
             </div>
         </li>

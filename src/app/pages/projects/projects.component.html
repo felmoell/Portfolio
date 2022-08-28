@@ -1,0 +1,15 @@
+<app-header-backend></app-header-backend>
+<div ibmGrid class="SectionWrapper">
+    <div ibmRow>
+        <div ibmCol  [columnNumbers]="{'md': 12, 'sm': 12, 'lg' : 12}">
+            <ibm-table-container>
+                <ibm-table-header>
+                    <h4 ibmTableHeaderTitle>Projekte</h4>
+                </ibm-table-header>
+                <ibm-table [model]="model" [sortable]="true" [showSelectionColumn]="false" [striped]="true">
+                    <ng-content></ng-content>
+                </ibm-table>
+            </ibm-table-container>
+        </div>
+    </div>
+</div>

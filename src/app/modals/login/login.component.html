@@ -1,0 +1,26 @@
+<ibm-modal size="sm" [open]="open" (overlaySelected)="closeModal()" >
+    <ibm-modal-header (closeSelect)="closeModal()" [showCloseButton]="true">
+  
+        <h3 ibmModalHeaderHeading>Login</h3>
+
+    </ibm-modal-header>
+    <section ibmModalContent hasForm="true" [formGroup]="loginForm">
+
+        <div class="bx--text-input__field-wrapper margin25">
+            <ibm-label >
+                Mail
+                <input ibmText placeholder="Mail" [autocomplete]="false"  formControlName="mail">
+            </ibm-label>
+        </div>
+        <div class="bx--text-input__field-wrapper margin25">
+            <ibm-label >
+                Password
+                <input ibmText placeholder="Password" type="password" [autocomplete]="false" formControlName="pw">
+            </ibm-label>
+        </div>
+    </section>
+    <ibm-modal-footer>
+        <button class="bx--btn bx--btn--secondary" (click)="closeModal()">Abbrechen</button>
+        <button class="bx--btn bx--btn--primary" modal-primary-focus (click)="login()">Login</button>
+    </ibm-modal-footer>
+</ibm-modal>
