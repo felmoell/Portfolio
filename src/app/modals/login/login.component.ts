@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ModalService } from 'carbon-components-angular';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -10,10 +10,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   open: boolean = false;
-  loginForm:FormGroup;
+  loginForm:UntypedFormGroup;
   constructor(
     private auth:AuthService,
-    private fb:FormBuilder) {
+    private fb:UntypedFormBuilder) {
       this.loginForm = this.fb.group({
         mail : ['',[Validators.required,Validators.email]],
         pw : ['',[Validators.required]]
