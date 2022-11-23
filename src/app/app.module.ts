@@ -15,34 +15,31 @@ import { CronComponent } from './pages/cron/cron.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    HeaderComponent,
-    LoginComponent,
-    CronComponent,
-    ProjectsComponent,
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    CarbonModule,
-    ReactiveFormsModule,
-    FormsModule
-  ],
-  entryComponents: [
-    LoginComponent,
-  ],
-  providers: [
-    AuthService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptorService,
-      multi: true
-    }
-  ],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        HeaderComponent,
+        LoginComponent,
+        CronComponent,
+        ProjectsComponent,
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        CarbonModule,
+        ReactiveFormsModule,
+        FormsModule
+    ],
+    providers: [
+        AuthService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptorService,
+            multi: true
+        }
+    ],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
