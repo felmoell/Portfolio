@@ -7,8 +7,9 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 export class GitHubService {
 
   constructor(private http: HttpClient) { }
+  
   getData(): Promise<any> {
-    const url = "https://dead-puce-rattlesnake-gown.cyclic.app/repos";    
+    const url = "https://porftilioapi-eufkg8eubuf9g2dm.germanywestcentral-01.azurewebsites.net/api/repos/allRepos";    
     const httpOption = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

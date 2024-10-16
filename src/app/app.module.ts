@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { HeaderComponent } from './pages/home/components/header/header.component';
 import { LoginComponent } from './modals/login/login.component';
 import { CarbonModule } from './helpers/carbon/carbon.module';
@@ -14,8 +14,7 @@ import { AuthInterceptorService } from './interceptors/tokenInterceptor';
 import { CronComponent } from './pages/cron/cron.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         AppComponent,
         HomeComponent,
         HeaderComponent,
@@ -23,23 +22,18 @@ import { ProjectsComponent } from './pages/projects/projects.component';
         CronComponent,
         ProjectsComponent,
     ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA], imports: [BrowserModule,
         AppRoutingModule,
         CarbonModule,
         ReactiveFormsModule,
-        FormsModule
-    ],
-    providers: [
+        FormsModule], providers: [
         AuthService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: AuthInterceptorService,
             multi: true
-        }
-    ],
-    bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
-})
+        },
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }

@@ -18,10 +18,10 @@ import { HeaderBackendComponent } from 'src/app/components/header-backend/header
     InputModule,
     GridModule,
     TableModule,
-    CheckmarkOutlineModule,
-    CheckmarkFilledWarningModule,
+ //   CheckmarkOutlineModule,
+ //   CheckmarkFilledWarningModule,
     HeaderModule,
-    LogoutModule,
+ //   LogoutModule,
   ],
   exports : [
     ModalModule,
@@ -30,11 +30,11 @@ import { HeaderBackendComponent } from 'src/app/components/header-backend/header
     InputModule,
     GridModule,
     TableModule,
-    CheckmarkOutlineModule,
-    CheckmarkFilledWarningModule,
+ //   CheckmarkOutlineModule,
+ //   CheckmarkFilledWarningModule,
     HeaderBackendComponent,
     HeaderModule,
-    LogoutModule,
+//    LogoutModule,
   ]
 })
 export class CarbonModule { }
