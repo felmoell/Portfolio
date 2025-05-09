@@ -1,0 +1,94 @@
+---
+import CardProject from '@components/CardProject.astro'
+
+const { title, projects } = {
+  title: 'Ausgewählte Projekte',
+  projects: [
+    {
+      title: 'Juicery',
+      description:
+        'Webseite einer Saftbar in LosAngeles zum Testen von der Animate On Scroll Javascript Library.',
+      image: '/src/images/projects/Img_Juicery.png',
+      techs: ['HTML', 'CSS', 'JavaScript'],
+      code: 'Code',
+      preview: 'Preview',
+      gitHubURL: 'https://github.com/felmoell/juicery',
+      hostedURL: ''
+    },
+    {
+      title: 'Corona Tracker',
+      description:
+        'Weltweiter Überblick über die Coronafallzahlen mit interaktiver Karte und verschieden Diagrammen.',
+      image: '/src/images/projects/Img_Corona_Tracker.png',
+      techs: ['Angular', 'Ionic', 'Google Charts'],
+      code: 'Code',
+      preview: 'Preview',
+      gitHubURL: 'https://github.com/felmoell/Corona-Tracker',
+      hostedURL: 'https://schmolles-corona-tracker.web.app/' 
+    },
+    {
+      title: 'Emotions',
+      description:
+        'Softwaresystem zur Erfassung von Emotionen im Zusammenhang mit der akutellen Position des Nutzers.',
+      image: '/src/images/projects/Img_Emotions.jpg',
+      techs: ['Java', 'Android',  'Laravel', 'PHP'],
+      code: 'Code',
+      preview: 'Preview',
+      gitHubURL: 'https://github.com/felmoell/Emotions',
+      hostedURL: ''
+    }
+  ]
+}
+---
+
+<section id=top-projects class="projects"  data-aos="fade-left" data-aos-easing="ease-in-sine">
+  <h2>
+    <span>{title}</span>
+  </h2>
+  {
+    projects.map(({ title, description, image, techs, code, preview ,gitHubURL, hostedURL}) => (
+      <CardProject
+        src={image}
+        alt={title}
+        title={title}
+        description={description}
+        techs={techs}
+        code={code}
+        preview={preview}
+        gitHubURL={gitHubURL}        
+        hostedURL={hostedURL}
+      />
+    ))
+  }
+</section>
+
+<style>
+  .projects {
+    padding-bottom: 120px;
+
+    & h2 {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      margin-bottom: 86px;
+
+      @media (width >= 768px) {
+        justify-content: start;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 1px;
+          background-color: var(--border-color);
+        }
+      }
+
+      & span {
+        order: 1;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+import inter from '@fontsource-variable/inter/files/inter-latin-standard-normal.woff2'
+import Favicons from '@components/Favicons.astro'
+import Footer from '@components/Footer.astro'
+import Navbar from '@components/Navbar.astro'
+import Social from '@components/Social.astro'
+import 'sanitize.css'
+import 'sanitize.css/assets.css'
+import 'sanitize.css/typography.css'
+import '@styles/global.css'
+import 'aos/dist/aos.css'
+---
+
+<!doctype html>
+<html class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Portfolio</title>
+    <slot name="preconnect" />
+    <slot name="async-script" />
+    <slot name="critical-css" />
+    <slot name="stylesheet" />
+    <link
+      rel="preload"
+      as="font"
+      crossorigin="anonymous"
+      href={inter}
+      type="font/woff2"
+    />
+  </head>
+  <slot name="preload" />
+  <slot name="defer-script" />
+  <meta name="generator" content={Astro.generator} />
+  <slot name="schema" />
+  <Favicons />
+  <slot name="social-media" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+    <Social />
+    <slot name="dynamic-components" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      import AOS from 'aos'
+
+      AOS.init()
+    </script>
+  </body>
+</html>

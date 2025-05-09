@@ -1,0 +1,81 @@
+---
+import { Icon } from 'astro-icon/components'
+import Button from '@components/Button.astro'
+
+const {
+  title,
+  job_title: jobTitle,
+  description,
+  cta
+} = {
+    "title": "Hi, ich bin <br> Felix Möllerherm!",
+    "job_title": "<strong>Frontend Developer</strong> aus Münster.",
+    "description": "Aktuell auf MEAN-Stack (MongoDB/Express/Angular/Node)",
+    "cta": "Kontakt"
+  }
+---
+
+<section class="hero" data-aos="fade-up" data-aos-easing="ease-in-sine">
+  <div>
+    <h1 set:html={title} ></h1>
+    <section>
+      <p set:html={jobTitle} />
+      <p>{description}</p>
+    </section>
+    <section class="button-container">
+      <Button class="filled" href="mailto:felix.moellerherm@googlemail.com">{cta}</Button>
+      <Button href="https://www.linkedin.com/in/felix-m%C3%B6llerherm-429935243/" >
+        <Icon name="linkedin" size={24} />
+        <span>LinkedIn</span>
+      </Button>
+    </section>
+
+
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: calc(100vh - 100px);
+
+    @media (width >= 768px) {
+      padding-block: 129px;
+    }
+
+    & > div {
+      position: relative;
+      margin-inline: auto;
+      text-align: center;
+      padding: 10vw 2vw;
+      overflow: hidden;
+
+      & > * + *:not(canvas) {
+        margin-top: 24px;
+      }
+
+      & p {
+        font-size: 1.25rem;
+        color: var(--text-description-color);
+
+        @media (width >= 768px) {
+          font-size: 1.5rem;
+        }
+
+        > strong {
+          color: var(--text-color);
+        }
+      }
+
+      & .button-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 13px;
+
+        @media (width >= 768px) {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+</style>

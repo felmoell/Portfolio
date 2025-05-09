@@ -1,52 +1,77 @@
 {
-  "name": "portfolio",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+  "name": "felmoell_portfolio-v2",
   "private": true,
+  "description": ".",
+  "keywords": [
+    "portfolio",
+    "astro",
+    "porfolio-template",
+    "astrojs",
+    "astro-template"
+  ],
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "astro": "astro",
+    "build": "astro check && astro build",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "start": "astro dev"
+  },
+  "lint-staged": {
+    "./**/*.{js,mjs,cjs}": [
+      "eslint --cache --fix --ext .js,.mjs,.cjs ./",
+      "prettier --cache --write \"./**/*.{js,mjs,cjs}\""
+    ],
+    "./**/*.ts": [
+      "eslint --cache --fix --ext .ts ./",
+      "prettier --cache --write \"./**/*.ts\""
+    ],
+    "./src/**/*.astro": [
+      "eslint --cache --fix --ext .astro ./src/",
+      "prettier --cache --write \"./src/**/*.astro\""
+    ],
+    "./src/**/*.css": "prettier --cache --write \"./src/**/*.css\"",
+    "./**/*.json": "prettier --cache --write \"./**/*.json\"",
+    "./**/*.yml": "prettier --cache --write \"./**/*.yml\""
+  },
   "dependencies": {
-    "@angular/animations": "^15.0.1",
-    "@angular/common": "^15.0.1",
-    "@angular/compiler": "^15.0.1",
-    "@angular/core": "^15.0.1",
-    "@angular/forms": "^15.0.1",
-    "@angular/platform-browser": "^15.0.1",
-    "@angular/platform-browser-dynamic": "^15.0.1",
-    "@angular/router": "^15.0.1",
-    "@carbon/icons-angular": "^11.2.2",
-    "@types/socket.io-client": "^3.0.0",
-    "aos": "^2.3.4",
-    "bootstrap": "^4.6.0",
-    "carbon-components": "^10.56.0",
-    "carbon-components-angular": "^4.59.12",
-    "rxjs": "~6.6.0",
-    "socket.io-client": "^4.4.1",
-    "tslib": "^2.0.0",
-    "zone.js": "~0.11.4"
+    "@astrojs/check": "0.9.4",
+    "@astrolicious/i18n": "0.5.1",
+    "@fontsource-variable/inter": "5.1.0",
+    "@playform/compress": "0.1.4",
+    "aos": "3.0.0-beta.6",
+    "astro": "4.16.2",
+    "astro-compressor": "0.4.1",
+    "astro-icon": "1.1.1",
+    "astro-imagetools": "0.9.0",
+    "astro-seo-schema": "4.0.2",
+    "astro-sitemap": "1.0.0",
+    "astro-tunnel": "0.1.6",
+    "i18next": "23.15.2",
+    "sanitize.css": "13.0.0",
+    "schema-dts": "1.1.2",
+    "typescript": "5.6.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.0.0",
-    "@angular/cli": "^15.0.0",
-    "@angular/compiler-cli": "^15.0.1",
-    "@types/jasmine": "~3.6.0",
-    "@types/node": "^12.11.1",
-    "codelyzer": "^6.0.0",
-    "jasmine-core": "~3.6.0",
-    "jasmine-spec-reporter": "~5.0.0",
-    "karma": "~6.4.1",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage": "~2.0.3",
-    "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "^1.5.0",
-    "protractor": "~7.0.0",
-    "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~4.8.4"
+    "@ianvs/prettier-plugin-sort-imports": "4.3.1",
+    "@types/aos": "3.0.7",
+    "@typescript-eslint/eslint-plugin": "7.0.1",
+    "@typescript-eslint/parser": "7.0.0",
+    "astro-eslint-parser": "1.0.3",
+    "eslint": "8.57.0",
+    "eslint-config-love": "47.0.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-config-standard": "17.1.0",
+    "eslint-plugin-astro": "1.2.4",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jsx-a11y": "6.10.0",
+    "eslint-plugin-n": "16.6.2",
+    "eslint-plugin-promise": "6.1.1",
+    "lint-staged": "15.2.10",
+    "prettier": "3.3.3",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "0.6.6"
   }
 }

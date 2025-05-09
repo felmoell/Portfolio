@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon/components'
+import Button from '@components/Button.astro'
+---
+
+<section class="contact" >
+  <div class="buttons-container">
+    <Button class="filled" href="mailto:felix.moellerherm@googlemail.com">Kontakt</Button>
+    <Button href="https://www.linkedin.com/in/felix-m%C3%B6llerherm-429935243/" >
+      <Icon name="linkedin" size={24} />
+      <span>LinkedIn</span>
+    </Button>
+  </div>
+</section>
+
+<style>
+  .contact {
+    & .buttons-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 13px;
+      margin-top: 24px;
+
+      @media (width >= 768px) {
+        flex-direction: row;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,83 @@
+---
+import CardContributions from '@components/CardContributions.astro'
+let { title } = {"title": "Alle Projekte"  }
+
+let contributions:any =  []
+const response = await fetch('https://porftilioapi-eufkg8eubuf9g2dm.germanywestcentral-01.azurewebsites.net/api/repos/allRepos');
+const data = await response.json();
+contributions = data.projects;
+
+
+---
+
+<section id="all-projects" class="contributions" data-aos="fade-up" data-aos-easing="ease-in-sine">
+  <h2>
+    <span>{title}</span>
+  </h2>
+  <div class="card-projects">
+    {
+      contributions.map(
+        ({
+          src,
+          full_name,
+          name,
+          description,
+          topics,
+          html_url,
+          repo_label: repoLabel,
+        }:any) => (
+          <CardContributions
+            alt={full_name}
+            title={name}
+            description={description}
+            techs={topics}
+            repo={html_url}
+            repoLabel={repoLabel}
+          />
+        )
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .contributions {
+    padding-bottom: 120px;
+
+    & h2 {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      margin-bottom: 48px;
+
+      @media (width >= 768px) {
+        justify-content: start;
+
+        &::before,
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 1px;
+          background-color: var(--border-color);
+        }
+      }
+    }
+
+    & .card-projects {
+      display: grid;
+      align-items: center;
+      gap: 36px;
+
+      @media (width >= 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (width >= 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+</style>

@@ -1,0 +1,34 @@
+---
+const year = new Date().getFullYear()
+---
+
+<footer>
+  <p>
+    <span>
+      © <span id="year">{year}</span>
+    </span>
+  </p>
+</footer>
+
+<style>
+  footer {
+    padding-block: 67px;
+    text-align: center;
+    padding-inline: var(--mobile-inline-padding);
+
+    @media (width >= 768px) {
+      padding-inline: 0;
+    }
+
+    & a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: var(--transition-text);
+    }
+
+  }
+</style>
+
+<script is:inline>
+  document.querySelector('#year').textContent = new Date().getFullYear()
+</script>
