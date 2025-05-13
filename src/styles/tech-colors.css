@@ -4,25 +4,47 @@ html {
   .html {
     background-color: #7f4932;
     transition: var(--transition-bg);
+    color: var(--text-color-tech);
   }
 
   .css {
     background-color: #324b7f;
     transition: var(--transition-bg);
+    color: var(--text-color-tech);
+  }
+
+
+  .azure{
+    background-color: #0078D4;
+    transition: var(--transition-bg);
+    color: var(--text-color-tech); 
   }
 
   .tailwindcss,
+  .aos,
+  .payload,
   .typescript,
+  .typesc,
+  .bootstrap,
   .react {
     background-color: #32547f;
     transition: var(--transition-bg);
+    color: var(--text-color-tech);
+  }
+
+  .ui,
+  .adobe-xd,
+  .usability{
+    background-color: #f4aacf;
+    transition: var(--transition-bg);
+    color: var(--text-color-tech);
   }
 
   .nodejs,
   .node {
     background-color: #417E38;
     transition: var(--transition-bg);
-    color: white;
+    color: var(--text-color-tech);
   }
 
 
@@ -30,31 +52,37 @@ html {
   .sass {
     background-color: #602957;
     transition: var(--transition-bg);
+    color: var(--text-color-tech);
   }
 
   .open-props {
     background-color: #3a4367;
     transition: var(--transition-bg);
+    color: var(--text-color-tech);
   }
 
   .javascript {
     background-color: #665e24;
     transition: var(--transition-bg);
+    color: var(--text-color-tech);
   }
 
   .php {
     background-color: #616161;
     transition: var(--transition-bg);
+    color: var(--text-color-tech);
   }
 
   .wordpress {
     background-color: #3a4367;
     transition: var(--transition-bg);
+    color: var(--text-color-tech);
   }
 
   .firebase {
     background-color: #7f6932;
     transition: var(--transition-bg);
+    color: var(--text-color-tech);
   }
 
   .pwa {
@@ -66,19 +94,26 @@ html {
   .angular {
     background-color: #DE3641;
     transition: var(--transition-bg);
-    color: white;
+    color: var(--text-color-tech);
   }
 
   .google-charts {
     background-color: #0F9D58;
     transition: var(--transition-bg);
-    color: white;
+    color: var(--text-color-tech);
   }
 
-  .ionic {
+  .ionic,
+  .capacitor {
     background-color: #012684;
     transition: var(--transition-bg);
-    color: white;
+    color: var(--text-color-tech);
+  }
+
+  .powercloud{
+    background-color: #FDCA10;
+    transition: var(--transition-bg);
+    color: var(--text-color-tech);
   }
 
   .java {
@@ -89,20 +124,24 @@ html {
   .android {
     background-color: #8fdc9e;
     transition: var(--transition-bg);
+    color: var(--text-color-tech);
   }
 
   .laravel {
     background-color: #f5a6a2;
     transition: var(--transition-bg);
+    color: var(--text-color-tech);
   }
   
 .scss {
   background-color: #f4aacf;
   transition: var(--transition-bg);
+  color: var(--text-color-tech);
 }
 .php {
   background-color: #687197;
   transition: var(--transition-bg);
+  color: var(--text-color-tech);
 }
 }
 
@@ -111,6 +150,7 @@ html.dark {
   .astro,
   .html {
     background-color: #ffbc96;
+    color: var(--text-color-tech);
   }
 
   .css {
@@ -118,6 +158,7 @@ html.dark {
   }
 
   .tailwindcss,
+  .bootstrap,
   .typescript,
   .react {
     background-color: #bddaff;

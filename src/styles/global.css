@@ -5,6 +5,7 @@ html {
   --bg-card-projects: #cbcbcb4d;
   --bg-separator: #000;
   --text-color: #000;
+  --text-color-tech:#fff;
   --text-description-color: color-mix(in srgb, #a6a6a6, #000 40%);
   --border-color: #e6e6e6;
   --border-card-projects-color: #e6e6e6;
@@ -29,6 +30,7 @@ html.dark {
   --bg-card-projects: #4847474d;
   --bg-separator: #5a5a5a;
   --text-color: #fff;
+  --text-color-tech:#fff;
   --text-description-color: #a6a6a6;
   --font: "Inter", sans-serif;
   --border-color: #5a5a5a;

@@ -8,7 +8,7 @@ let loading:boolean = true;
 try {
   loading = true;
   const response = await fetch(
-    'https://porftilioapi-eufkg8eubuf9g2dm.germanywestcentral-01.azurewebsites.net/api/repos/allRepos'
+    'http://localhost:8080/api/repos/allRepos'
   )
   if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`)
   const data = await response.json()
