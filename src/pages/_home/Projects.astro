@@ -4,16 +4,38 @@ import CardProject from '@components/CardProject.astro'
 const { title, projects } = {
   title: 'Ausgewählte Projekte',
   projects: [
-    {
-      title: 'Juicery',
+  {
+      title: 'Powercloud Endkundenportal',
       description:
-        'Webseite einer Saftbar in LosAngeles zum Testen von der Animate On Scroll Javascript Library.',
-      image: '/src/images/projects/Img_Juicery.png',
-      techs: ['HTML', 'CSS', 'JavaScript'],
+        'Endkundenportal auf Basis der Powercloud Abrechnungsplatfrom. Enkuden können Zählerstände eintragen, Abschläge ändern/berrechnen. Tarife wechseln und auch ihre Dynamischen Verbäuche von Smartmetern einsehen.',
+      image: '/src/images/projects/Img_pcPortal.png',
+      techs: ['HTML', 'CSS','Angular', 'Typescript'],
       code: 'Code',
       preview: 'Preview',
-      gitHubURL: 'https://github.com/felmoell/juicery',
-      hostedURL: ''
+      gitHubURL: '',
+      hostedURL: 'https://pc-webpush.web.app/login/136'
+    },
+    {
+      title: 'EPEX Price Visualisierung',
+      description:
+        'Visualisierung für dynamische Endkundentarife, um Kostenentwicklungen nachvollziehen zu können.',
+      image: '/src/images/projects/Img_EPEXVIS.png',
+      techs: ['HTML', 'CSS','Angular', 'Typescript'],
+      code: 'Code',
+      preview: 'Preview',
+      gitHubURL: '',
+      hostedURL: 'https://epex-dev.manage.swaas.de/2000/MP?postcode=48159&showPostCodeInput=false&showFooter=false&showHeader=false'
+    },
+    {
+      title: 'Mittelstandspower',
+      description:
+        'Mittelstandspower ist dein Gewerbestromanbieter. Wir verschaffen Unternehmen Zugang zu erneuerbarer, bezahlbarer Energie. Bei voller Transparenz.',
+      image: '/src/images/projects/Img_mittelstandspower.png',
+      techs: ['HTML', 'CSS', 'Astro','Angular', 'Typescript'],
+      code: 'Code',
+      preview: 'Preview',
+      gitHubURL: '',
+      hostedURL: 'https://mittelstandspower.web.app/'
     },
     {
       title: 'Corona Tracker',

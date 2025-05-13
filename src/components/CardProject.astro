@@ -68,10 +68,17 @@ if (!images[src])
     </div>
     <p>{description}</p>
     <div class="links">
-      <a href={gitHubURL} target="_blank">
+
+      {
+        gitHubURL != '' && (
+        <a href={gitHubURL} target="_blank">
         <Icon name="github" size={24} />
         {code}
       </a>
+        )
+      }
+
+
       <div>
         {
           hostedURL != '' && (
@@ -91,7 +98,7 @@ if (!images[src])
     display: grid;
     align-items: center;
     gap: 48px;
-    margin-bottom: 86px;
+    margin-bottom: 12vh;
     max-width: 434px;
     margin-inline: auto;
 
