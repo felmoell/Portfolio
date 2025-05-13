@@ -2,39 +2,17 @@
   "name": "felmoell_portfolio-v2",
   "private": true,
   "description": ".",
-  "keywords": [
-    "portfolio",
-    "astro",
-    "porfolio-template",
-    "astrojs",
-    "astro-template"
-  ],
   "license": "MIT",
   "author": "",
   "type": "module",
   "scripts": {
     "astro": "astro",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "dev": "astro dev",
     "preview": "astro preview",
-    "start": "astro dev"
-  },
-  "lint-staged": {
-    "./**/*.{js,mjs,cjs}": [
-      "eslint --cache --fix --ext .js,.mjs,.cjs ./",
-      "prettier --cache --write \"./**/*.{js,mjs,cjs}\""
-    ],
-    "./**/*.ts": [
-      "eslint --cache --fix --ext .ts ./",
-      "prettier --cache --write \"./**/*.ts\""
-    ],
-    "./src/**/*.astro": [
-      "eslint --cache --fix --ext .astro ./src/",
-      "prettier --cache --write \"./src/**/*.astro\""
-    ],
-    "./src/**/*.css": "prettier --cache --write \"./src/**/*.css\"",
-    "./**/*.json": "prettier --cache --write \"./**/*.json\"",
-    "./**/*.yml": "prettier --cache --write \"./**/*.yml\""
+    "start": "astro dev",
+    "start-server": "astro build && npx serve dist",
+    "deploy" : " npx firebase deploy --only hosting"
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",
@@ -46,10 +24,7 @@
     "astro-compressor": "0.4.1",
     "astro-icon": "1.1.1",
     "astro-imagetools": "0.9.0",
-    "astro-seo-schema": "4.0.2",
     "astro-sitemap": "1.0.0",
-    "astro-tunnel": "0.1.6",
-    "i18next": "23.15.2",
     "sanitize.css": "13.0.0",
     "schema-dts": "1.1.2",
     "typescript": "5.6.3"

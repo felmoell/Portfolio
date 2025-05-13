@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
+import ToggleSwitch from './ToggleSwitch.astro'
 
-// Obtenemos los enlaces de la navegación de locales
 const links = [
     {
       "label": "Start",
@@ -13,7 +13,7 @@ const links = [
     },
     {
       "label": "Ausgewählte Projekte",
-      "href": "#top-projects"
+      "href": "#main-projects"
     },
     {
       "label": "Portfolio",
@@ -37,9 +37,9 @@ const links = [
         </li>
       ))
     }
-    <!--li>
+    <li>
       <ToggleSwitch />
-    </li-->
+    </li>
   </ul>
   <button id="menu-button">
     <Icon name="menu" size={36} />
@@ -87,8 +87,6 @@ const links = [
 
         & li {
           position: relative;
-
-          /* Agrega el separador entre elementos excepto al último hijo */
           &:not(:last-child)::after {
             --size: 3px;
 
@@ -116,7 +114,6 @@ const links = [
         }
 
         & a {
-          /* Con la función color-mix cambia el color del link aplicandole un 40% del color del fondo */
           --hover-color: color-mix(
             in srgb,
             var(--text-color),
@@ -135,8 +132,6 @@ const links = [
           &:focus {
             color: var(--hover-color);
           }
-
-          /* La media query (any-hover: hover) se utiliza para aplicarle un efecto de hover al link */
           @media (any-hover: hover) {
             &:hover {
               color: var(--hover-color);
@@ -147,25 +142,20 @@ const links = [
     }
 
     & button {
-      /* Con la función color-mix cambia el color del link aplicandole un 40% del color del fondo */
       --hover-color: color-mix(in srgb, var(--text-color), var(--bg-color) 40%);
-
       background: transparent;
       color: var(--text-color);
       border: none;
       padding: 0;
       transform: var(--transition-text);
-
       &:active {
         color: var(--hover-color);
       }
-
       @media (any-hover: hover) {
         &:hover {
           color: var(--hover-color);
         }
       }
-
       @media (width >= 768px) {
         display: none;
       }
@@ -282,7 +272,7 @@ const links = [
 </script>
 
 <script>
-  const mainSections = document.querySelectorAll('section[id]')
+ const mainSections = document.querySelectorAll('section[id]')
   const navbarLinks = document.querySelectorAll(
     '#menu a'
   ) as NodeListOf<HTMLAnchorElement>
@@ -292,7 +282,6 @@ const links = [
       if (sectionId && link.href.includes(`#${sectionId}`)) {
         link.classList.add('active')
       } else if (!sectionId && link.href.includes('#top')) {
-        // Activar el enlace del #top cuando estamos en la parte superior
         link.classList.add('active')
       } else {
         link.classList.remove('active')
@@ -307,31 +296,27 @@ const links = [
 
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          isAnySectionVisible = true // Hay al menos una sección visible
-          visibleSectionId = entry.target.id // Guardar el id de la sección visible
+          isAnySectionVisible = true 
+          visibleSectionId = entry.target.id 
         }
       })
 
-      // Si no hay ninguna sección visible y estamos en el top de la página
       if (!isAnySectionVisible && window.scrollY === 0) {
-        handleActiveLink(null) // Activar el enlace de #top
+        handleActiveLink(null) 
       } else if (isAnySectionVisible) {
-        handleActiveLink(visibleSectionId) // Activar la sección visible
+        handleActiveLink(visibleSectionId) 
       }
     },
     {
-      threshold: 0.1, // Detectar cuando la sección está al menos en un 10% visible
-      rootMargin: '0px 0px -40% 0px' // Ajustar el margen para detectar la visibilidad
+      threshold: 0.1,
+      rootMargin: '0px 0px -40% 0px'
     }
   )
 
-  // Observar cada sección
   mainSections.forEach((section) => observer.observe(section))
-
-  // Agregar una verificación para cuando el usuario regresa al inicio
   window.addEventListener('scroll', () => {
     if (window.scrollY === 0) {
-      handleActiveLink(null) // Activar #top cuando el scroll está en el tope
+      handleActiveLink(null) 
     }
   })
 </script>
@@ -339,49 +324,21 @@ const links = [
 <script>
   const toggleSwitchs = document.querySelectorAll('.toggle')
   const toggleThumbs = document.querySelectorAll('.toggle-thumb')
-
-  // Establecemos una variable global
   let darkModeState = false
-
-  // Detectamos si el usuario tiene habilitado el modo oscuro
-  const getScheme = window.matchMedia('(prefers-color-scheme: dark)')
 
   function toggleDarkMode(state: boolean) {
     document.documentElement.classList.toggle('dark', state)
     toggleThumbs.forEach((thumb) => {
       thumb.classList.toggle('active', state)
     })
-
-    // Establecemos el valor de la variable global
-    // con el valor del parámetro state
     darkModeState = state
   }
 
-  // Creamos una nueva función para almacenar el valor en localStorage
   function setSchemeState(state: boolean) {
     localStorage.setItem('dark-theme', String(state))
   }
 
-  // toggleDarkMode(getScheme.matches)
-  // Reemplazamos el valor obtenido por la variable getScheme
-  // por el valor que esté guardado en localStorage, para que
-  // al cargar la página verifique el valor almacenado en
-  // localStorage
   toggleDarkMode(localStorage.getItem('dark-theme') === 'true')
-
-  // Escuchamos los cambios en las configuración del
-  // del sistema operativo para alternar de tema
-  getScheme.addEventListener('change', () => {
-    // Negamos el valor guardado dentro de la función toggleDarkMode
-    // a la variable global darkModeState y se lo asignamos así misma
-    darkModeState = !darkModeState
-
-    // document.documentElement.classList.toggle('dark')
-    // Llamamos a la funciones toggleDarkMode para alternar el tema
-    // y setSchemeState para guardar el valor en localStorage
-    toggleDarkMode(darkModeState)
-    setSchemeState(darkModeState)
-  })
 
   toggleSwitchs.forEach((toggle) => {
     toggle.addEventListener('change', () => {
@@ -392,13 +349,4 @@ const links = [
     })
   })
 
-  window.addEventListener('keydown', (e) => {
-    // Detectamos si las teclas Alt, Shift y D están presionadas
-    if (e.altKey === true && e.shiftKey === true && e.key === 'D') {
-      darkModeState = !darkModeState
-
-      toggleDarkMode(darkModeState)
-      setSchemeState(darkModeState)
-    }
-  })
 </script>

@@ -1,0 +1,81 @@
+---
+import Layout from '@layouts/Layout.astro'
+
+const options = {
+  title: 'Felix Möllerherm | Impressum',
+  description: ''
+}
+---
+
+<Layout options={options}>
+  <main>
+    <section class="hero" data-aos="fade-up" data-aos-easing="ease-in-sine">
+        <h1>Impressum</h1>
+
+        <p>Felix M&ouml;llerherm<br />
+        Joseph-K&ouml;nig-Stra&szlig;e 4<br />
+        48147 M&uuml;nster</p>
+        
+        <h2>Kontakt</h2>
+        E-Mail: info@felix-moellerherm.de</p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+    .hero {
+      min-height: calc(100vh - 100px);
+
+      @media (width >= 768px) {
+        padding-block: 129px;
+      }
+
+      & > div {
+        position: relative;
+        margin-inline: auto;
+        text-align: left;
+        padding: 10vw 2vw;
+        overflow: hidden;
+
+        & > * + *:not(canvas) {
+          margin-top: 24px;
+        }
+
+        & p {
+          font-size: 1.25rem;
+          color: var(--text-description-color);
+
+          @media (width >= 768px) {
+            font-size: 1.5rem;
+          }f
+
+          > strong {
+            color: var(--text-color);
+          }
+        }
+
+        & .button-container {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          gap: 13px;
+
+          @media (width >= 768px) {
+            flex-direction: row;
+          }
+        }
+      }
+    }
+  </style>
+
+  
+<style>
+  main {
+    max-width: 1054px;
+    margin-inline: auto;
+    padding-inline: var(--mobile-inline-padding);
+    @media (width >= 1200px) {
+      padding-inline: 0;
+    }
+  }
+</style>
